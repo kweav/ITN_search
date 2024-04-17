@@ -17,6 +17,7 @@ The following table contains a list of ITCR-funded courses.
 
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
+devtools::install_github("tidyverse/googlesheets4")
 library(DT)
 library(here)
 library(googlesheets4)
@@ -61,14 +62,14 @@ courses_bestpractice <- courses_sheet %>% filter(Category == "Best Practices")
 prep_table <- function(inputdf){
   outputdfP1<- inputdf %>%
     filter(CurrentOrFuture == "Current") %>% #select just current classes
-    mutate(CourseName = paste0("<b>", CourseName, "</b>")) %>% #mutate the name to be bolded 
-    mutate(CourseName = 
+    mutate(CourseName = paste0("<b>", CourseName, "</b>")) %>% #mutate the name to be bolded
+    mutate(CourseName =
              case_when(
                Funding == "ITN" ~ paste0(CourseName, '<br></br>', '<img src="resources/images/ITCRLogo.png" height="40"></img>'),
                Funding == "ITN; Hutch" ~ paste0(CourseName, '<br></br>', '<img src="resources/images/ITCRLogo.png" height="40"></img>', '<br></br>', '<img src="resources/images/fhlogo.png" height="40"></img>')
                        )
     ) %>%
-    mutate(Links = 
+    mutate(Links =
               case_when(
                 (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="',GithubLink,'"style="color: #be3b2a"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>', '<br></br>',
                                                                       '<a href="',BookdownLink,'"style="color: #be3b2a"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
@@ -85,13 +86,13 @@ prep_table <- function(inputdf){
                                                                     ) #Fill in Coursera, Bookdown, and github logos and links
               )
            )
-    
+
   outputdfP1 %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience))
-  
+
   outputdfP2 <- inputdf %>%
     filter(CurrentOrFuture == "Future") %>% #select just future classes
-    mutate(CourseName = paste0("<b>", CourseName, "</b>")) %>% #mutate the name to be bolded 
-    mutate(CourseName = 
+    mutate(CourseName = paste0("<b>", CourseName, "</b>")) %>% #mutate the name to be bolded
+    mutate(CourseName =
              case_when(
                Funding == "ITN" ~ paste0(CourseName, '<br></br>', '<img src="resources/images/ITCRLogo.png" height="40"></img>'),
                Funding == "ITN; Hutch" ~ paste0(CourseName, '<br></br>', '<img src="resources/images/ITCRLogo.png" height="40"></img>', '<br></br>', '<img src="resources/images/fhlogo.png" height="40"></img>')
@@ -99,11 +100,11 @@ prep_table <- function(inputdf){
     ) %>%
     mutate(Links = '<img src="resources/images/underconstruction.png" height="40"></img>'
              ) %>% select(c(CourseName, Links, WebsiteDescription, BroadAudience))
-    
+
   outputdf <- rbind(outputdfP1, outputdfP2)  
-    
+
   return(outputdf)  
-    
+
   #name is first column (CourseName) with logos for funding (Funding)
   #links is second column unless it's still under construction, and then it's a cute icon about construction (GithubLink, `Bookdown link`, LeanpubLink, CourseraLink)
   #Description is third column (WebsiteDescription)
