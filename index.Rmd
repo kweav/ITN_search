@@ -17,10 +17,10 @@ The following table contains a list of ITCR-funded courses.
 
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
-devtools::install_github("tidyverse/googlesheets4")
+#devtools::install_github("tidyverse/googlesheets4")
 library(DT)
 library(here)
-library(googlesheets4)
+#library(googlesheets4)
 library(tidyverse)
 library(magrittr)
 ```
@@ -34,7 +34,10 @@ library(magrittr)
 # read in the google sheet
 ## set blank cells and "NA" strings to be NAs
 
-courses_sheet <- read_sheet("https://docs.google.com/spreadsheets/d/1TiNdu92hK-0FN8GbmWi_QbdUaX2yJF76yFt2oljm_qE/edit?usp=sharing", na = c("NA", ""))
+#courses_sheet <- read_sheet("https://docs.google.com/spreadsheets/d/1TiNdu92hK-0FN8GbmWi_QbdUaX2yJF76yFt2oljm_qE/edit?usp=sharing", na = c("NA", ""))
+
+courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
+
 ```
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
