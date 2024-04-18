@@ -11,10 +11,10 @@
 
 
 
-<title>Style</title>
+<title>Future Courses (All Categories)</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -32,6 +32,18 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.15/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 <link rel="shortcut icon" href="resources/images/favicon.ico" />
  <!--- go to https://favicon.io/favicon-converter/ to upload an image to make a new favicon.io. You will need to replace the current favicon.io image with the one in the downloaded directory from the website. The current image is in the resources/images/ directory --->
 
@@ -259,37 +271,26 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Style</h1>
+<h1 class="title toc-ignore">Future Courses (All Categories)</h1>
 
 </div>
 
 
-<div id="navigation-bar" class="section level2">
-<h2>Navigation bar</h2>
-<p>To change the part of the navigation bar that says “OTTR Web”, modify the title within the <code>_site.yml</code> file.</p>
-<p><img src="resources/images/navbar.png" title="Change nav bar" alt="Change nav bar" width="40%" style="display: block; margin: auto;" /></p>
+<style type="text/css">
+  body{
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+<div id="overview" class="section level3">
+<h3><strong>Overview</strong></h3>
+<p>The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Software Development courses from the ITCR Training Network (ITN).</p>
+<strong>Table keys:</strong>
+<div title="Table keys">
+<p><img src="resources/images/githublogo.png"  height="30"> </img> = GitHub Source Material, <img src=resources/images/bookstack.png height="30"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="30"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="30"> </img> = Leanpub,   <img src="resources/images/ITCRLogo.png" height="25"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="30"></img> = Hutch Funded, <img src=resources/images/underconstruction.png height="30"></img> = Under Construction</p>
 </div>
-<div id="overall-theme" class="section level2">
-<h2>Overall theme</h2>
-<p>To change the color scheme/fonts of the website modify the <code>theme</code> in the <code>_site.yml</code> file (see <a href="https://bookdown.org/yihui/blogdown/themes.html">here</a> for options):</p>
-<p><img src="resources/images/theme.png" title="Change theme" alt="Change theme" width="40%" style="display: block; margin: auto;" /></p>
-</div>
-<div id="change-the-favicon" class="section level2">
-<h2>Change the favicon</h2>
-<p>The small image that shows up on the browser can also be changed.</p>
-<p>You can make a small image to replace the existing one by going to <a href="https://favicon.io/favicon-converter/" class="uri">https://favicon.io/favicon-converter/</a> and uploading an image that you would like.</p>
-<p>Next, simply replace the image called <code>favicon.ico</code> in the <code>images</code> directory within the <code>resources</code> directory with the image you just created and downloaded from the favicon converter website.</p>
-</div>
-<div id="additional-changes" class="section level2">
-<h2>Additional changes</h2>
-<p>To make additional changes to the style, you can modify the <code>styles.css</code> file with css code. This <a href="https://www.w3schools.com/css/">website</a> has great information about css code.</p>
-<p>As an example if you wanted to change the color of the blue line to green you could change where it says <code>lightblue</code> to <code>lightgreen</code> in the <code>styles.css</code> file. You can also use a hex color code like those that can be found at this <a href="https://htmlcolorcodes.com/">website</a>, such as <code>#00FF9E</code> to get a specific shade.</p>
-<p><img src="resources/images/blue.png" title="Change color of line" alt="Change color of line" width="80%" style="display: block; margin: auto;" /></p>
-<p>Note that if you change the css file with a new element that is not already defined like <code>body</code> then you would need to do it as done with the <code>banner</code> element. This was then added to the index.Rmd file by using:</p>
-<pre><code>&lt;div class = &quot;banner&quot;&gt;
-Banner text!  
-&lt;/div&gt;</code></pre>
-<p>Also checkout the <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> for more customization of the pages.</p>
+<div id="htmlwidget-df738b775a20b684ecef" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-df738b775a20b684ecef">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","caption":"<caption>Future Courses -- Not Yet Available<\/caption>","data":[["<b>Imaging for Cancer Informatics<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Clinical Data Analysis for Cancer Informatics<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Software Development Beyond Coding<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Data Visualization in Cancer Informatics<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Containers for Cancer Informatics<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Data Management<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Dissemination & Engagement<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Package Development<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>","<b>Machine Learning for Cancer Informatics<\/b><br><\/br><img src=\"resources/images/ITCRLogo.png\" height=\"40\"><\/img>"],["<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>","<img src=\"resources/images/underconstruction.png\" height=\"40\"><\/img>"],["Tools & Resources","Tools & Resources","Software Development","Best Practices","Software Development","Best Practices","Software Development","Software Development","Tools & Resources"],[null,null,null,null,null,null,null,null,null],["New to data science","New to data science","Software developers","New to data science","Software developers","Leaders","Software developers","Software developers","New to data science"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>CourseName<\/th>\n      <th>Links<\/th>\n      <th>Category<\/th>\n      <th>WebsiteDescription<\/th>\n      <th>BroadAudience<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"pageLength":10,"scrollCollapse":true,"fillContainer":true,"order":[0,"asc"],"columnDefs":[{"className":"dt-center","targets":"_all"}],"initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'backgroundColor': '#3f546f'});\n$(this.api().table().header()).css({'color': '#fff'});\n}","orderClasses":false,"orderCellsTop":true}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 
 
