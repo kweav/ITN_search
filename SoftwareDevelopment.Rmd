@@ -1,0 +1,50 @@
+---
+title: "Software Development Courses"
+subtitle: " "
+output: html_document
+---
+
+<style type="text/css">
+  body{
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+
+### **Overview**
+
+The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Software Development courses from the ITCR Training Network (ITN).
+
+```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
+library(DT)
+library(here)
+#library(googlesheets4)
+library(tidyverse)
+library(magrittr)
+
+source("scripts/format-tables.R")
+```
+
+**Table keys:**
+<div title="Table keys">
+<img src="resources/images/githublogo.png"  height="30"> </img> = GitHub Source Material, <img src=resources/images/bookstack.png height="30"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="30"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="30"> </img> = Leanpub, &nbsp; <img src="resources/images/ITCRLogo.png" height="25"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="30"></img> = Hutch Funded, <img src=resources/images/underconstruction.png height="30"></img> = Under Construction
+</div>
+
+```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
+# read in the google sheet
+## set blank cells and "NA" strings to be NAs
+
+#courses_sheet <- read_sheet("https://docs.google.com/spreadsheets/d/1TiNdu92hK-0FN8GbmWi_QbdUaX2yJF76yFt2oljm_qE/edit?usp=sharing", na = c("NA", ""))
+
+courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
+
+# grab just software development courses
+courses_software <- courses_sheet %>% filter(Category == "Software Development")
+
+software_table <- setup_table(prep_table(as_tibble(courses_software), current=TRUE), "Software Development Courses Currently Available")
+```
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+#Display software development table
+software_table
+```

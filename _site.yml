@@ -1,24 +1,10 @@
-name: OTTR Template Website
+name: ITN Courses Searchable Table
 output_dir: 'docs'
 navbar:
-  title: OTTR Web
+  title: ITN Courses Searchable Table
   left:
   - text: ""
     href: index.html
-    icon: fa-home
-  - text: 1. Setup
-    href: setup.html
-  - text: 2. Hosting
-    href: hosting.html
-  - text: Editing
-    href: editing.html
-  - text: 3. Style
-    href: style.html
-  - text: 4. Git Actions
-    href: git_actions.html
-  - text: More ottr docs
-    href: https://www.ottrproject.org/
-
 
 output:
   html_document:
