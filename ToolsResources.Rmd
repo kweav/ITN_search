@@ -13,7 +13,7 @@ output: html_document
 
 ### **Overview**
 
-The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Software Development courses from the ITCR Training Network (ITN).
+The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Tools & Resources courses from the ITCR Training Network (ITN).
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 library(DT)
