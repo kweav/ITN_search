@@ -61,9 +61,9 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
   }
   
   if (keep_category){
-    outputdf %<>% select(c(CourseName, Links, Category, WebsiteDescription, BroadAudience))
+    outputdf %<>% select(c(CourseName, Links, Category, WebsiteDescription, BroadAudience, Concepts))
   } else{
-    outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience))
+    outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Concepts))
   }
   return(outputdf)
 }
