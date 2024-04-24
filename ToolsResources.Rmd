@@ -13,7 +13,7 @@ output: html_document
 
 ### **Overview**
 
-The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Software Development courses from the ITCR Training Network (ITN).
+The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Tools & Resources courses from the ITCR Training Network (ITN).
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 library(DT)
@@ -27,7 +27,7 @@ source("scripts/format-tables.R")
 
 **Table keys:**
 <div title="Table keys">
-<img src="resources/images/githublogo.png"  height="30"> </img> = GitHub Source Material, <img src=resources/images/bookstack.png height="30"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="30"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="30"> </img> = Leanpub, &nbsp; <img src="resources/images/ITCRLogo.png" height="25"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="30"></img> = Hutch Funded, <img src=resources/images/underconstruction.png height="30"></img> = Under Construction
+<img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material, <img src=resources/images/bookstack.png height="20"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub<br></br> <img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Hutch Funded<br></br>
 </div>
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
