@@ -52,14 +52,14 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
              case_when(
                Funding == "ITN" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#be3b2a\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a>'),
                Funding == "ITN; Hutch" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#be3b2a\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a><br></br>
-                                                  <a href =\"https://www.fredhutch.org/en/about/about-the-hutch.html"style="color:#be3b2a\" target=\"_blank\"<div title =\"About Fred Hutch\"></div><img src=\"resources/images/fhlogo.png\" height=\"40\"></img></a>')
+                                                  <a href =\"https://www.fredhutch.org/en/about/about-the-hutch.html"style="color:#be3b2a\" target=\"_blank\"<div title =\"About Fred Hutch\"></div><img src=\"resources/images/fhlogo.png\" height=\"40\"></img><p class=\"image-name\">Fred Hutch</p></a>')
              )
     ) %>% #Make the concepts bulletted instead of separated by semi-colons
     mutate(Concepts = paste0("- ", Concepts)) %>%
     mutate(Concepts = str_replace_all(Concepts, ";", "<br></br>- ")) %>%
     mutate(BroadAudience = str_replace_all(BroadAudience, ";", "<br></br>")) %>%
     mutate(BroadAudience = str_replace(BroadAudience, "Software developers", "<img src=\"resources/images/keyboard-1405.png\" alt=\"Software developers\" height=\"40\"></img><p class=\"image-name\">Software developers</p>")) %>%
-    mutate(BroadAudience = str_replace(BroadAudience, "New to data science", "<img src=\"resources/images/backpack_new_learner.png\" alt =\"New to data science\" height=\"40\"></img><p class=\"image-name\">New to data science</p>")) %>%
+    mutate(BroadAudience = str_replace(BroadAudience, "New to data science", "<img src=\"resources/images/hatching_chick_newlearner.png\" alt =\"New to data science\" height=\"40\"></img><p class=\"image-name\">New to data science</p>")) %>%
     mutate(BroadAudience = str_replace(BroadAudience, "Leaders", "<img src=\"resources/images/leaders.png\" alt=\"Leaders\" height=\"40\"></img><p class=\"image-name\">Leaders</p>"))
   
   #Replace the broad audiences with logos
