@@ -1,5 +1,5 @@
 ---
-title: "Tools & Resources Courses"
+title: "Best Practices Courses"
 subtitle: " "
 output: html_document
 ---
