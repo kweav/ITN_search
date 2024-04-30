@@ -1,5 +1,5 @@
 ---
-title: "Tools & Resources Courses"
+title: "Best Practices Courses"
 subtitle: " "
 output: html_document
 ---
@@ -27,7 +27,9 @@ source("scripts/format-tables.R")
 
 **Table keys:**
 <div title="Table keys">
-<img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material, <img src=resources/images/bookstack.png height="20"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub<br></br> <img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Hutch Funded<br></br>
+<img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Fred Hutch Cancer Center Funded<br></br>
+<img src=resources/images/bookstack.png height="20"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub, <img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material<br></br> 
+<img src="resources/images/keyboard-1405.png" height="20"> </img> = Software Developers, <img src="resources/images/hatching_chick_newlearner.png" height="35"> </img> = New to Data Science, <img src="resources/images/leaders.png" height = "35"> </img> = Leaders<br></br>
 </div>
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
@@ -41,7 +43,13 @@ courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
 # grab just best practices courses
 courses_bestpractice <- courses_sheet %>% filter(Category == "Best Practices")
 
-bestpractices_table <- setup_table(prep_table(as_tibble(courses_bestpractice), current=TRUE), "Best Practices Courses Currently Available")
+bestpractices_table <- setup_table(prep_table(as_tibble(courses_bestpractice), current=TRUE), "Best Practices Courses Currently Available", columnDefsListOfLists = 
+                                                          list(list(className = 'dt-center', targets = c(0,1,3)),
+                                                               list(className = "dt-left", targets = c(2,4)),
+                                                               list(width = '240px', targets = c(2)) ,
+                                                               list(width = '160px', targets = c(4))
+                                                              )
+                                   )
 ```
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
