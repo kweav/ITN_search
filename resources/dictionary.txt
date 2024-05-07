@@ -10,6 +10,8 @@ GH
 Github
 GitHub
 HTTPS
+ITCR
+ITN
 Leanpub
 lightblue
 lightgreen

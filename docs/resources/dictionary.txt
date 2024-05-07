@@ -9,6 +9,8 @@ GH
 Github
 GitHub
 HTTPS
+ITCR
+ITN
 lightblue
 lightgreen
 OTTR
