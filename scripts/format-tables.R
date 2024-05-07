@@ -25,18 +25,18 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
       filter(CurrentOrFuture == "Current") %>%
       mutate(Links =
                case_when(
-                 (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                       '<a href="', CourseraLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
-                                                                       '<a href="', LeanpubLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                       '<a href="', GithubLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                 (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
+                                                                       '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
+                                                                       '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
+                                                                       '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
                  ), #Fill in all 4 logos and links
-                 (!is.na(LeanpubLink) & is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                      '<a href="', LeanpubLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                 (!is.na(LeanpubLink) & is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
+                                                                      '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
                  ), #Fill in Leanpub, Bookdown, and github logos and links
-                 (is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                      '<a href="', CourseraLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #be3b2a"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                 (is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
+                                                                      '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
                  ) #Fill in Coursera, Bookdown, and github logos and links
                )
               )
@@ -50,9 +50,9 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
     mutate(CourseName = paste0("<b>", CourseName, "</b>")) %>% #mutate the name to be bolded
     mutate(CourseName = #add logos for funding and link to appropriate about pages
              case_when(
-               Funding == "ITN" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#be3b2a\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a>'),
-               Funding == "ITN; Hutch" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#be3b2a\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a><br></br>
-                                                  <a href =\"https://www.fredhutch.org/en/about/about-the-hutch.html"style="color:#be3b2a\" target=\"_blank\"<div title =\"About Fred Hutch\"></div><img src=\"resources/images/fhlogo.png\" height=\"40\"></img><p class=\"image-name\">Fred Hutch</p></a>')
+               Funding == "ITN" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#0000FF\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a>'),
+               Funding == "ITN; Hutch" ~ paste0(CourseName, '<br></br><a href=\"https://itcr.cancer.gov/\"style=\"color:#0000FF\" target=\"_blank\"<div title =\"About ITCR\"></div><img src=\"resources/images/ITCRLogo.png\" height=\"40\"></img></a><br></br>
+                                                  <a href =\"https://www.fredhutch.org/en/about/about-the-hutch.html"style="color:#0000FF\" target=\"_blank\"<div title =\"About Fred Hutch\"></div><img src=\"resources/images/fhlogo.png\" height=\"40\"></img><p class=\"image-name\">Fred Hutch</p></a>')
              )
     ) %>% #Make the concepts bulletted instead of separated by semi-colons
     mutate(Concepts = paste0("- ", Concepts)) %>%
