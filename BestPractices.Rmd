@@ -1,5 +1,5 @@
 ---
-title: "Best Practices Courses"
+title: " "
 subtitle: " "
 output: html_document
 ---
@@ -11,10 +11,6 @@ output: html_document
 }
 </style>
 
-### **Overview**
-
-The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Best Practices courses from the ITCR Training Network (ITN). Completion through Leanpub (<img src=resources/images/leanpublogo.png height="20"> </img>) or Coursera (<img src=resources/images/courseralogo.png height="20"> </img>) will award certification in the course.  
-
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 library(DT)
 library(here)
@@ -25,12 +21,6 @@ library(magrittr)
 source("scripts/format-tables.R")
 ```
 
-**Table keys:**
-<div title="Table keys">
-<img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Fred Hutch Cancer Center Funded<br></br>
-<img src=resources/images/bookstack.png height="20"> </img> = Bookdown, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera,<img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub, <img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material<br></br> 
-<img src="resources/images/keyboard-1405.png" height="20"> </img> = Software Developers, <img src="resources/images/hatching_chick_newlearner.png" height="35"> </img> = New to Data Science, <img src="resources/images/leaders.png" height = "35"> </img> = Leaders<br></br>
-</div>
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 # read in the google sheet
