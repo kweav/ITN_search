@@ -13,7 +13,7 @@ output: html_document
 
 ### **Overview**
 
-The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Best Practices courses from the ITCR Training Network (ITN).
+The following table contains a list of Informatics Technology for Cancer Research (ITCR) program funded Best Practices courses from the ITCR Training Network (ITN). Completion through Leanpub (<img src=resources/images/leanpublogo.png height="20"> </img>) or Coursera (<img src=resources/images/courseralogo.png height="20"> </img>) will award certification in the course.  
 
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 library(DT)

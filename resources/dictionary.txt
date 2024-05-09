@@ -1,4 +1,5 @@
 cheatsheet
+Coursera
 css
 custimization
 cwrigh
@@ -11,6 +12,7 @@ GitHub
 HTTPS
 ITCR
 ITN
+Leanpub
 lightblue
 lightgreen
 OTTR
