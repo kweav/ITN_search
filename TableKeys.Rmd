@@ -1,13 +1,15 @@
 ---
-title: "TableKeys"
-author: "Kate Isaac"
-date: "`r Sys.Date()`"
+title: " "
+subtitle: " "
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+<style type="text/css">
+  body{
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
 
 ### **Overview of tables**
 
