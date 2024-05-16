@@ -1,10 +1,6 @@
 name: ITN Courses Searchable Table
 output_dir: 'docs'
-navbar:
-  title: ITN Courses Searchable Table
-  left:
-  - text: ""
-    href: index.html
+
 
 output:
   html_document:
