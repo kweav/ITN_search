@@ -53,7 +53,7 @@ This course is one of our Informatics **Fundamentals, Tools, & Resources** Cours
 
 ## For individuals who
 
-```{r echo=FALSE,message=FALSE,warning=FALSE}
+```{r echo=FALSE,message=FALSE,warning=FALSE, out.width = "100%"}
 ottrpal::include_slide(currentROI$ForIndividualsWhoSlideLink)
 ```
 
@@ -63,13 +63,13 @@ We particularly recommend this course for those who are **new to data science**
 
 ### Concepts Discussed
 
-```{r echo=FALSE,message=FALSE,warning=FALSE}
+```{r echo=FALSE,message=FALSE,warning=FALSE, out.width = "100%"}
 ottrpal::include_slide(currentROI$ConceptsDiscussedSlideLink)
 ```
 
 ### Learning Objectives
 
-```{r echo=FALSE,message=FALSE,warning=FALSE}
+```{r echo=FALSE,message=FALSE,warning=FALSE, out.width = "100%"}
 ottrpal::include_slide(currentROI$LOSlideLink)
 ```
 
@@ -84,4 +84,4 @@ This course is available in the following formats:
 
 ### Funding
 
-[![ITCR](resources/images/ITCRLogo.png){width=5% height=5%}](https://itcr.cancer.gov/)
+[![ITCR](resources/images/ITCRLogo.png){width=10% height=10%}](https://itcr.cancer.gov/)
