@@ -59,9 +59,9 @@ ottrpal::include_slide(currentROI$ForIndividualsWhoSlideLink)
 
 We particularly recommend this course for those who are **new to data science** or **Software Developers**
 
-![New to data science avatar](resources/images/NewToDataScience.png){width=5% height=5%}
+![New to data science](resources/images/NewToDataScience.png){width=10% height=10%}
 
-![Software Developer avatar](resources/images/SoftwareDeveloper.png){width=5% height=5%}
+![Software Developer](resources/images/SoftwareDeveloper.png){width=10% height=10%}
 
 ### Concepts Discussed
 
