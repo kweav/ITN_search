@@ -112,3 +112,76 @@ setup_table <- function(inputdf, some_caption, columnDefsListOfLists=NULL){
     )
   return(output_table)
 }
+
+#' Programmatically write Rmd for each course
+#'
+#'
+#'
+
+write_Rmd <- function(courseROI){
+  
+  # Rmd Header information
+  cat(paste0('---\ntitle: "', courseROI$CourseName, '"\noutput: html_document\n---\n\n'))
+  
+  # Rmd styling information
+  cat('<style type = "text/css">\n\tbody{\n\ttext-align: justify;\n\ttext-justify: inter-word;\n}\n</style>\n\n<style>\n\tpre{\n\t\tborder: 0;\n\t}\n</style>\n```{r include=FALSE}\nknitr::opts_chunk$set(comment=NA)\n```\n\n')
+  
+  # About the course info  
+  
+  cat(paste0('## About this course\n\n```{r echo=FALSE,message=FALSE, warning=FALSE,results = \'asis\'}\ncat(courseROI$WebsiteDescription)\n```\n\nThis course is one of our **', courseROI$Category, '** Courses.\n\n'))
+  
+  # For individuals who info
+  
+  cat(paste0('## For individuals who\n\n```{r echo=FALSE,message=FALSE,warning=FALSE,out.width="100%"}\nottrpal::include_slide(courseROI$ForIndividualsWhoSlideLink\n```\n\nWe particularly recommend this course for those who are **', str_replace(courseROI$BroadAudience, "; ", "** or **"), '**\n\n'))
+  
+  if (!is.na(str_match(courseROI$BroadAudience, "New to data science"))){
+    cat('![New to data science](resources/images/NewToDataScience.png){width=10% height=10%}\n\n')
+  }
+  
+  if (!is.na(str_match(courseROI$BroadAudience, "New to data science"))){
+    cat('![Software Developer](resources/images/SoftwareDeveloper.png){width=10% height=10%}\n\n')
+  }
+  
+  if (!is.na(str_match(courseROI$BroadAudience, "Leaders"))){
+    cat('![Leader](resources/images/leaders.png){width=10% height=10%}\n\n')
+  }
+  
+  # For Concepts Discussed Info
+  
+  cat('## Concepts Discussed\n\n```{r echo=FALSE,message=FALSE,warning=FALSE, out.width = "100%"}\nottrpal::include_slide(courseROI$ConceptsDiscussedSlideLink)\n```\n\n')
+  
+  # For Learning Objectives Info
+  
+  cat('## Learning Objectives\n\n```{r echo=FALSE,message=FALSE,warning=FALSE,out.width="100%"}\nottrpal::include_slide(courseROI$LOSlideLink)\n```\n\n')
+  
+  # Prerequisites info if applicable
+  
+  if (!is.na(courseROI$PrereqsLink)){
+    cat('## Prerequisites\n\n```{r echo=FALSE,message=FALSE,warning=FALSE,out.width="100%"}\nottrpal::include_slide(courseROI$PrereqsLink\n```\n\n')
+  }
+  
+  # Course formats info
+  
+  cat('## Available course formats to access this course\n\nThis course is available in the following formats:\n\n- [on our bookdown website](`r courseROI$BookdownLink`) (easy to access, free, & self-guided/no quizzes)\n')
+  
+  if (!is.na(courseROI$CourseraLink)){
+    cat('- [on Coursera](`r courseROI$CourseraLink`) (completion comes with certification; not free unless institutional login available)\n')
+  }
+  
+  if (!is.na(courseROI$LeanpubLink)){
+    cat('- [on Leanpub](`r courseROI$LeanpubLink`) (completion comes with certification; free access)\n')
+  }
+  
+  cat('- [GitHub source material](`r courseROI$GithubLink`)\n\n')
+  
+  # Funding info
+  
+  cat('## Funding\n\n[![ITCR](resources/images/ITCRLogo.png){width=10% height=10%}](https://itcr.cancer.gov/)')
+  
+  if (!is.na(str_match(courseROI$Funding, "Hutch"))){
+    cat('[!Fred Hutch Cancer Center](resources/images/fhlogo.png){width=10% height=10%}](https://www.fredhutch.org/en/about/about-the-hutch.html)')
+  }
+  
+  # Need to make a function that wraps this function in a writeLines(), giving it each course row, and rendering the Rmd
+  
+}
