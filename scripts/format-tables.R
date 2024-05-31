@@ -66,10 +66,10 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
   
   if (keep_category){ #select appropriate columns 
     outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Category)) %>%
-      `colnames<-`(c("Course Name", "Relevant Links", "Description", "Broad Audience", "Category"))
+      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Category"))
   } else{
     outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Concepts)) %>%
-      `colnames<-`(c("Course Name", "Relevant Links", "Description", "Broad Audience", "Concepts Discussed"))
+      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Concepts Discussed"))
   }
   return(outputdf)
 }
@@ -112,3 +112,4 @@ setup_table <- function(inputdf, some_caption, columnDefsListOfLists=NULL){
     )
   return(output_table)
 }
+  
