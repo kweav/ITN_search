@@ -126,6 +126,10 @@ write_Rmd <- function(courseROI){
   # Rmd styling information
   cat('<style type = "text/css">\n\tbody{\n\ttext-align: justify;\n\ttext-justify: inter-word;\n}\n</style>\n\n<style>\n\tpre{\n\t\tborder: 0;\n\t}\n</style>\n```{r include=FALSE}\nknitr::opts_chunk$set(comment=NA)\n```\n\n')
   
+  # import ottrpal
+  
+  cat('```{r, echo=FALSE, results=\'hide\',message=FALSE,warning=FALSE}\n\nlibrary(ottrpal)\n\n```')
+  
   # About the course info  
   
   cat(paste0('## About this course\n\n```{r echo=FALSE,message=FALSE, warning=FALSE,results = \'asis\'}\ncat(courseROI$WebsiteDescription)\n```\n\nThis course is one of our **', courseROI$Category, '** Courses.\n\n'))
@@ -182,6 +186,6 @@ write_Rmd <- function(courseROI){
     cat('[!Fred Hutch Cancer Center](resources/images/fhlogo.png){width=10% height=10%}](https://www.fredhutch.org/en/about/about-the-hutch.html)')
   }
   
-  # Need to make a function that wraps this function in a writeLines(), giving it each course row, and rendering the Rmd
+  # Need to make a function that wraps this function in a writeLines(), giving it each course row to create a new Rmd (that will be rendered by OTTR)
   
 }
