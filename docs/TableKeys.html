@@ -13,8 +13,8 @@
 
 <title>TableKeys.knit</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.27.1/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -84,6 +85,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
 pre code {
   padding: 0;
 }
@@ -103,8 +107,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -112,16 +116,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -177,7 +174,23 @@ pre code {
 }
 </style>
 <div title="Table keys">
-<p><img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Fred Hutch Cancer Center Funded<br></br> <img src=resources/images/bookstack.png height="20"> </img> = Bookdown website, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera, <img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub, <img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material<br></br> <img src=resources/images/underconstruction.png height="20"></img> = Under Construction<br><br/> <img src="resources/images/keyboard-1405.png" height="20"> </img> = Software Developers, <img src="resources/images/hatching_chick_newlearner.png" height="35"> </img> = New to Data Science, <img src="resources/images/leaders.png" height = "35"> </img> = Leaders<br></br></p>
+<p><img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR
+Funded, <img src=resources/images/fhlogo.png height="20"></img> = Fred
+Hutch Cancer Center Funded<br></br>
+<img src=resources/images/website_icon.png height="20"> </img> =
+Bookdown website,
+<img src=resources/images/courseralogo.png height="20"> </img> =
+Coursera, <img src=resources/images/leanpublogo.png height="20"> </img>
+= Leanpub, <img src="resources/images/githublogo.png"  height="20">
+</img> = GitHub Source Material<br></br>
+<img src=resources/images/underconstruction.png height="20"></img> =
+Under Construction<br><br/>
+<img src="resources/images/keyboard-1405.png" height="20"> </img> =
+Software Developers,
+<img src="resources/images/hatching_chick_newlearner.png" height="35">
+</img> = New to Data Science,
+<img src="resources/images/leaders.png" height = "35"> </img> =
+Leaders<br></br></p>
 </div>
 
 
