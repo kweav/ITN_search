@@ -25,18 +25,18 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
       filter(CurrentOrFuture == "Current") %>%
       mutate(Links =
                case_when(
-                 (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
+                 (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
                                                                        '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
-                                                                       '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                       '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                                                                       '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img><p class=\"image-name\">Leanpub</p>', '</a>', '<br></br>',
+                                                                       '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
                  ), #Fill in all 4 logos and links
-                 (!is.na(LeanpubLink) & is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                      '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img>', '</a>', '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                 (!is.na(LeanpubLink) & is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
+                                                                      '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img><p class=\"image-name\">Leanpub</p>', '</a>', '<br></br>',
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
                  ), #Fill in Leanpub, Bookdown, and github logos and links
-                 (is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Link"> </div>','<img src="resources/images/bookstack.png"  height="30"> </img>', '</a>', '<br></br>',
+                 (is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
                                                                       '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img>', '</a>'
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
                  ) #Fill in Coursera, Bookdown, and github logos and links
                )
               )
@@ -66,10 +66,10 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
   
   if (keep_category){ #select appropriate columns 
     outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Category)) %>%
-      `colnames<-`(c("Course Name", "Relevant Links", "Description", "Broad Audience", "Category"))
+      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Category"))
   } else{
     outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Concepts)) %>%
-      `colnames<-`(c("Course Name", "Relevant Links", "Description", "Broad Audience", "Concepts Discussed"))
+      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Concepts Discussed"))
   }
   return(outputdf)
 }
