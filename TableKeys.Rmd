@@ -11,6 +11,8 @@ output: html_document
 }
 </style>
 
+**Table Keys**
+
 <div title="Table keys">
 <img src="resources/images/ITCRLogo.png" height="20"> </img> = ITCR Funded, <img src=resources/images/fhlogo.png height="20"></img> = Fred Hutch Cancer Center Funded<br></br>
 <img src=resources/images/website_icon.png height="20"> </img> = Bookdown website, <img src=resources/images/courseralogo.png height="20"> </img> = Coursera,  <img src=resources/images/leanpublogo.png height="20"> </img> = Leanpub,   <img src="resources/images/githublogo.png"  height="20"> </img> = GitHub Source Material<br></br>
