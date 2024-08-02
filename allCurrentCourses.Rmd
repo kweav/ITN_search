@@ -30,23 +30,26 @@ source("scripts/format-tables.R")
 
 courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
 
-# grab just best practices courses
-courses_bestpractice <- courses_sheet %>% filter(Category == "Best Practices")
+# remove the AI mini courses from the dataframe
+courses_sheet <- courses_sheet[-which(courses_sheet$CourseName == "AI for Decision Makers: Exploring AI Possibilities"  | courses_sheet$CourseName == "AI for Decision Makers: Avoiding AI Harm"| courses_sheet$CourseName == "AI for Decision Makers: Determining AI Needs" | courses_sheet$CourseName == "AI for Decision Makers: Developing AI Policy"),]
 
-bestpractices_table <- setup_table(prep_table(as_tibble(courses_bestpractice), current=TRUE), "Best Practices Courses Currently Available", columnDefsListOfLists = 
-                                                          list(list(className = 'dt-center', targets = c(0,1,2)),
-                                                               list(className = "dt-left", targets = c(3,4)),
+allCurrent_table <-
+  setup_table(
+    prep_table(as_tibble(courses_sheet), current=TRUE, keep_category = TRUE),
+    "Currently Available ITN Courses", columnDefsListOfLists =
+                                                          list(list(className = 'dt-center', targets = c(0,1,2,4)),
+                                                               list(className = "dt-left", targets = c(3,5)),
                                                                list(width = '240px', targets = c(3)) ,
-                                                               list(width = '160px', targets = c(4))
+                                                               list(width = '160px', targets = c(5))
                                                               )
-                                   )
+  )
 ```
 
 <div style = "width:100%; height:auto; margin: 0; padding:10px">
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
-#Display best practices table
-bestpractices_table
+#Display table of current courses
+allCurrent_table
 ```
 
 </div>

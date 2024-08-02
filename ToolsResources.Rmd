@@ -38,15 +38,19 @@ courses_sheet <- courses_sheet[-which(courses_sheet$CourseName == "AI for Decisi
 courses_toolresource <- courses_sheet %>% filter(Category == "Tools & Resources")
 
 toolsresources_table <- setup_table(prep_table(as_tibble(courses_toolresource), current = TRUE), "Tools & Resources Courses Currently Available", columnDefsListOfLists = 
-                                                          list(list(className = 'dt-center', targets = c(0,1,3)),
-                                                               list(className = "dt-left", targets = c(2,4)),
-                                                               list(width = '200px', targets = c(2)) ,
+                                                          list(list(className = 'dt-center', targets = c(0,1,2)),
+                                                               list(className = "dt-left", targets = c(3,4)),
+                                                               list(width = '200px', targets = c(3)) ,
                                                                list(width = '200px', targets = c(4))
                                                               )
                                     )
 ```
 
+<div style = "width:100%; height:auto; margin: 0; padding:10px">
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 #Display tools & resources table
 toolsresources_table
 ```
+
+</div>
