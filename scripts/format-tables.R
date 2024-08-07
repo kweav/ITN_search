@@ -60,7 +60,7 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
     mutate(BroadAudience = str_replace_all(BroadAudience, ";", "<br></br>")) %>%
     #Replace the broad audiences with logos
     mutate(BroadAudience = str_replace(BroadAudience, "Software developers", "<img src=\"resources/images/SoftwareDeveloper.png\" alt=\"Software developers\" height=\"40\"></img><p class=\"image-name\">Software developers</p>")) %>%
-    mutate(BroadAudience = str_replace(BroadAudience, "New to data science", "<img src=\"resources/images/NewToDataScience.png\" alt =\"New to data science\" height=\"40\"></img><p class=\"image-name\">New to data science</p>")) %>%
+    mutate(BroadAudience = str_replace(BroadAudience, "Researchers", "<img src=\"resources/images/NewToDataScience.png\" alt =\"Researchers\" height=\"40\"></img><p class=\"image-name\">Researchers</p>")) %>%
     mutate(BroadAudience = str_replace(BroadAudience, "Leaders", "<img src=\"resources/images/leader_avataaars.png\" alt=\"Leaders\" height=\"40\"></img><p class=\"image-name\">Leaders</p>")) %>%
     #Replace the categories with logos
     mutate(Category = str_replace(Category, "Software Development", "<img src=\"resources/images/keyboard-1405.png\" alt=\"Software development\" height=\"20\"></img><p class=\"image-name\">Software development</p>")) %>%

@@ -31,7 +31,8 @@ source("scripts/format-tables.R")
 courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
 
 # remove the AI mini courses from the dataframe
-courses_sheet <- courses_sheet[-which(courses_sheet$CourseName == "AI for Decision Makers: Exploring AI Possibilities"  | courses_sheet$CourseName == "AI for Decision Makers: Avoiding AI Harm"| courses_sheet$CourseName == "AI for Decision Makers: Determining AI Needs" | courses_sheet$CourseName == "AI for Decision Makers: Developing AI Policy"),]
+courses_sheet <- courses_sheet[-which(courses_sheet$CourseName == "AI for Decision Makers: Exploring AI Possibilities"  | courses_sheet$CourseName == "AI for Decision Makers: Avoiding AI Harm"| courses_sheet$CourseName == "AI for Decision Makers: Determining AI Needs" | courses_sheet$CourseName == "AI for Decision Makers: Developing AI Policy"),] %>%
+  mutate(BroadAudience = str_replace_all(BroadAudience, "New to data science", "Researchers"))
 
 allCurrent_table <-
   setup_table(
