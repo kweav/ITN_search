@@ -32,14 +32,18 @@ source("scripts/format-tables.R")
 courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
 
 future_table <- setup_table(prep_table(as_tibble(courses_sheet), current = FALSE, keep_category = TRUE), "Future Courses -- Not Yet Available", columnDefsListOfLists = 
-                                                          list(list(className = 'dt-center', targets = c(0,1,3,4)),
-                                                               list(className = "dt-left", targets = c(2)),
-                                                               list(width = '240px', targets = c(2))
+                                                          list(list(className = 'dt-center', targets = c(0,1,2,4)),
+                                                               list(className = "dt-left", targets = c(3)),
+                                                               list(width = '240px', targets = c(3))
                                                               )
                             )
 ```
+
+<div style = "width:100%; height:auto; margin: 0; padding:10px">
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 #Display tools & resources table
 future_table
 ```
+
+</div>
