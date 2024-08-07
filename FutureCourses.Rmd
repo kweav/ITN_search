@@ -29,7 +29,8 @@ source("scripts/format-tables.R")
 
 #courses_sheet <- read_sheet("https://docs.google.com/spreadsheets/d/1TiNdu92hK-0FN8GbmWi_QbdUaX2yJF76yFt2oljm_qE/edit?usp=sharing", na = c("NA", ""))
 
-courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
+courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", "")) %>%
+  mutate(BroadAudience = str_replace_all(BroadAudience, "New to data science", "Researchers"))
 
 future_table <- setup_table(prep_table(as_tibble(courses_sheet), current = FALSE, keep_category = TRUE), "Future Courses -- Not Yet Available", columnDefsListOfLists = 
                                                           list(list(className = 'dt-center', targets = c(0,1,2,4)),
