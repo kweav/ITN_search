@@ -28,15 +28,15 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
                  (!is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
                                                                        '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
                                                                        '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img><p class=\"image-name\">Leanpub</p>', '</a>', '<br></br>',
-                                                                       '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
+                                                                       '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source material</p>', '</a>'
                  ), #Fill in all 4 logos and links
                  (!is.na(LeanpubLink) & is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
                                                                       '<a href="', LeanpubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Leanpub Link"> </div>','<img src="resources/images/leanpublogo.png"  height="30"> </img><p class=\"image-name\">Leanpub</p>', '</a>', '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source material</p>', '</a>'
                  ), #Fill in Leanpub, Bookdown, and github logos and links
                  (is.na(LeanpubLink) & !is.na(CourseraLink)) ~ paste0('<a href="', BookdownLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Bookdown Website Link"> </div>','<img src="resources/images/website_icon.png"  height="30"> </img><p class=\"image-name\">Website</p>', '</a>', '<br></br>',
                                                                       '<a href="', CourseraLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Coursera Link"></div>','<img src="resources/images/courseralogo.png" height="30"> </img>', "</a>", '<br></br>',
-                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source Material</p>', '</a>'
+                                                                      '<a href="', GithubLink ,'"style="color: #0000FF"',' target="_blank"','<div title="Github Source Material Link"> </div>','<img src="resources/images/githublogo.png"  height="30"> </img><p class=\"image-name\">Source material</p>', '</a>'
                  ) #Fill in Coursera, Bookdown, and github logos and links
                )
               )
@@ -58,18 +58,25 @@ prep_table <- function(inputdf, current=TRUE, keep_category = FALSE){
     mutate(Concepts = paste0("- ", Concepts)) %>%
     mutate(Concepts = str_replace_all(Concepts, ";", "<br></br>- ")) %>%
     mutate(BroadAudience = str_replace_all(BroadAudience, ";", "<br></br>")) %>%
-    mutate(BroadAudience = str_replace(BroadAudience, "Software developers", "<img src=\"resources/images/keyboard-1405.png\" alt=\"Software developers\" height=\"40\"></img><p class=\"image-name\">Software developers</p>")) %>%
-    mutate(BroadAudience = str_replace(BroadAudience, "Researchers", "<img src=\"resources/images/hatching_chick_newlearner.png\" alt =\"Researchers\" height=\"40\"></img><p class=\"image-name\">Researchers</p>")) %>%
-    mutate(BroadAudience = str_replace(BroadAudience, "Leaders", "<img src=\"resources/images/leaders.png\" alt=\"Leaders\" height=\"40\"></img><p class=\"image-name\">Leaders</p>"))
+    #Replace the broad audiences with logos
+    mutate(BroadAudience = str_replace(BroadAudience, "Software developers", "<img src=\"resources/images/SoftwareDeveloper.png\" alt=\"Software developers\" height=\"40\"></img><p class=\"image-name\">Software developers</p>")) %>%
+    mutate(BroadAudience = str_replace(BroadAudience, "Researchers", "<img src=\"resources/images/NewToDataScience.png\" alt =\"Researchers\" height=\"40\"></img><p class=\"image-name\">Researchers</p>")) %>%
+    mutate(BroadAudience = str_replace(BroadAudience, "Leaders", "<img src=\"resources/images/leader_avataaars.png\" alt=\"Leaders\" height=\"40\"></img><p class=\"image-name\">Leaders</p>")) %>%
+    #Replace the categories with logos
+    mutate(Category = str_replace(Category, "Software Development", "<img src=\"resources/images/keyboard-1405.png\" alt=\"Software development\" height=\"20\"></img><p class=\"image-name\">Software development</p>")) %>%
+    mutate(Category = str_replace(Category, "Best Practices", "<img src=\"resources/images/golden-cup-7825.png\" alt=\"Best practices\" height=\"20\"></img><p class=\"image-name\">Best practices</p>")) %>%
+    mutate(Category = str_replace(Category, "Tools & Resources", "<img src=\"resources/images/tool-box-9520.png\" alt=\"Fundamentals, tools, & resources\" height=\"20\"></img><p class=\"image-name\">Fundamentals, tools & resources</p>"))
 
-  #Replace the broad audiences with logos
 
-  if (keep_category){ #select appropriate columns
-    outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Category)) %>%
-      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Category"))
+  if ((keep_category) & (current)) { #select appropriate columns
+    outputdf %<>% select(c(CourseName, BroadAudience, Links, WebsiteDescription, Category, Concepts)) %>%
+      `colnames<-`(c("Course Name", "Broad Audience", "Relevant Links", "Description", "Category", "Concepts Discussed"))
+  } else if ((keep_category) & !(current)){
+    outputdf %<>% select(c(CourseName, BroadAudience, Links, WebsiteDescription, Category)) %>%
+      `colnames<-`(c("Course Name", "Broad Audience", "Relevant Links", "Description", "Category"))
   } else{
-    outputdf %<>% select(c(CourseName, Links, WebsiteDescription, BroadAudience, Concepts)) %>%
-      `colnames<-`(c("Course Name", "Access the Course", "Description", "Broad Audience", "Concepts Discussed"))
+    outputdf %<>% select(c(CourseName, BroadAudience, Links, WebsiteDescription, Concepts)) %>%
+      `colnames<-`(c("Course Name", "Broad Audience", "Relevant Links", "Description", "Concepts Discussed"))
   }
   return(outputdf)
 }
@@ -112,6 +119,7 @@ setup_table <- function(inputdf, some_caption, columnDefsListOfLists=NULL){
     )
   return(output_table)
 }
+
 
 #' Programmatically write Rmd for each course
 #'
