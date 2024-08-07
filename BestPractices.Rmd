@@ -34,15 +34,19 @@ courses_sheet <- read_csv(here("resources/CourseTable.csv"), na = c("NA", ""))
 courses_bestpractice <- courses_sheet %>% filter(Category == "Best Practices")
 
 bestpractices_table <- setup_table(prep_table(as_tibble(courses_bestpractice), current=TRUE), "Best Practices Courses Currently Available", columnDefsListOfLists = 
-                                                          list(list(className = 'dt-center', targets = c(0,1,3)),
-                                                               list(className = "dt-left", targets = c(2,4)),
-                                                               list(width = '240px', targets = c(2)) ,
+                                                          list(list(className = 'dt-center', targets = c(0,1,2)),
+                                                               list(className = "dt-left", targets = c(3,4)),
+                                                               list(width = '240px', targets = c(3)) ,
                                                                list(width = '160px', targets = c(4))
                                                               )
                                    )
 ```
 
+<div style = "width:100%; height:auto; margin: 0; padding:10px">
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 #Display best practices table
 bestpractices_table
 ```
+
+</div>
