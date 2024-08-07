@@ -20,7 +20,7 @@ output: html_document
 ```{r include=FALSE}
 knitr::opts_chunk$set(comment = NA)
 ```
- 
+
 ```{r,echo=FALSE,results='hide',message=FALSE, warning=FALSE}
 
 library(here)
@@ -57,9 +57,9 @@ This course is one of our Informatics **Fundamentals, Tools, & Resources** Cours
 ottrpal::include_slide(currentROI$ForIndividualsWhoSlideLink)
 ```
 
-We particularly recommend this course for those who are **new to data science**
+We particularly recommend this course for those who are **Researchers**
 
-![New to data science](resources/images/NewToDataScience.png){width=10% height=10%}
+![Researchers](resources/images/NewToDataScience.png){width=10% height=10%}
 
 ### Concepts Discussed
 
